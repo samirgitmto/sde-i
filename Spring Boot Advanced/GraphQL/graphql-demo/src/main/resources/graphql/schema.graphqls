@@ -1,0 +1,36 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    orders: [Order!]!
+}
+
+type Order {
+    id: ID!
+    amount: Float!
+    products: [Product!]!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    price: Float!
+}
+
+type Query {
+    user(id: ID!): User
+    users: [User!]!
+    order(id: ID!): Order
+    orders: [Order!]!
+    product(id: ID!): Product
+    products: [Product!]!
+}
+
+type Mutation {
+    createUser(name: String!, email: String!): User
+    # PUT-style: replace all fields
+    updateUser(id: ID!, name: String!, email: String!): User
+    # PATCH-style: update only provided fields
+    patchUser(id: ID!, name: String, email: String): User
+    deleteUser(id: ID!): Boolean!
+}

@@ -1,0 +1,71 @@
+# --- Already separate git repos (do not include) ---
+basics/t5 spring security/flowable-demo/
+basics/t5 spring security/oa1-auth-code-pkce-oidc/
+basics/t5 spring security/los-bpmn/
+basics/t5 spring security/wcl-program-configurator-service/
+basics/t5 spring security/old/
+
+# --- Build / dependency artifacts ---
+**/target/
+**/build/
+**/out/
+**/bin/
+**/node_modules/
+**/dist/
+**/.gradle/
+**/gradle-app.setting
+
+# --- Package manager / lock noise (optional keep: remove these lines if you want locks) ---
+# package-lock.json
+# yarn.lock
+
+# --- Secrets & local config ---
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.jks
+**/application-local.yml
+**/application-local.properties
+**/application-secret.yml
+**/application-secret.properties
+
+# --- IDE / editor ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+*.swp
+*~
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+__MACOSX/
+
+# --- Logs & temp ---
+*.log
+*.tmp
+*.temp
+*.bak
+hs_err_pid*
+
+# --- PDFs / large binaries (if any appear under this tree) ---
+*.pdf
+*.epub
+*.zip
+*.rar
+*.7z
+
+# --- Java / Spring misc ---
+*.class
+*.jar
+*.war
+*.ear
+!**/gradle/wrapper/gradle-wrapper.jar
