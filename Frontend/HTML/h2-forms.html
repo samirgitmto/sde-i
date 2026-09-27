@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Example (Angular-Ready)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1200px; margin: 20px auto; display: flex; gap: 40px; }
+    .code, .output { width: 50%; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; font-size: 14px; /* Add these two lines: */
+		white-space: pre-wrap; word-break: break-word;}
+    .output form { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+    label { display: block; margin-top: 10px; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    button { background: #007BFF; color: white; border: none; padding: 10px 15px; margin-top: 15px; }
+    input:invalid { border: 1px solid red; }
+    input:valid { border: 1px solid green; }
+  </style>
+</head>
+<body>
+  <div class="code">
+    <h2>HTML Code</h2>
+    <pre>
+&lt;form id="userForm" action="/submit" method="POST"&gt;
+  &lt;label for="user-id"&gt;Username*&lt;/label&gt;
+  &lt;input type="text" id="user-id" name="userNameField" placeholder="Enter your username" required minlength="3"&gt;
+
+  &lt;label for="email-id"&gt;Email*&lt;/label&gt;
+  &lt;input type="email" id="email-id" name="userEmailField" placeholder="user@example.com" required&gt;
+
+  &lt;label for="password-id"&gt;Password*&lt;/label&gt;
+  &lt;input type="password" id="password-id" name="userPasswordField" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum 8 chars, at least 1 letter and 1 number"&gt;
+
+  &lt;label for="age-id"&gt;Age&lt;/label&gt;
+  &lt;input type="number" id="age-id" name="userAgeField" min="18" max="100"&gt;
+
+  &lt;label for="country-id"&gt;Country&lt;/label&gt;
+  &lt;select id="country-id" name="userCountryField"&gt;
+    &lt;option value=""&gt;-- Select --&lt;/option&gt;
+    &lt;option value="US"&gt;United States&lt;/option&gt;
+    &lt;option value="UK"&gt;United Kingdom&lt;/option&gt;
+    &lt;option value="IN"&gt;India&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;label&gt;Gender&lt;/label&gt;
+  &lt;div&gt;
+    &lt;input type="radio" id="male-id" name="userGenderField" value="male"&gt;
+    &lt;label for="male-id" style="display: inline;"&gt;Male&lt;/label&gt;
+    &lt;input type="radio" id="female-id" name="userGenderField" value="female"&gt;
+    &lt;label for="female-id" style="display: inline;"&gt;Female&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;input type="checkbox" id="subscribe-id" name="userSubscribeField" checked&gt;
+    &lt;label for="subscribe-id" style="display: inline;"&gt;Subscribe to newsletter&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;label for="bio-id"&gt;Bio&lt;/label&gt;
+  &lt;textarea id="bio-id" name="userBioField" rows="4"&gt;&lt;/textarea&gt;
+
+  &lt;label for="avatar-id"&gt;Profile Picture&lt;/label&gt;
+  &lt;input type="file" id="avatar-id" name="userAvatarField" accept="image/*"&gt;
+
+  &lt;button type="submit"&gt;Register&lt;/button&gt;
+  &lt;button type="reset"&gt;Clear Form&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+  <div class="output">
+    <h2>Rendered Output</h2>
+    <form id="userForm" action="/submit" method="POST">
+      <label for="user-id">Username*</label>
+      <input type="text" id="user-id" name="userNameField" placeholder="Enter your username" required minlength="3">
+
+      <label for="email-id">Email*</label>
+      <input type="email" id="email-id" name="userEmailField" placeholder="user@example.com" required>
+
+      <label for="password-id">Password*</label>
+      <input type="password" id="password-id" name="userPasswordField" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Minimum 8 chars, at least 1 letter and 1 number">
+
+      <label for="age-id">Age</label>
+      <input type="number" id="age-id" name="userAgeField" min="18" max="100">
+
+      <label for="country-id">Country</label>
+      <select id="country-id" name="userCountryField">
+        <option value="">-- Select --</option>
+        <option value="US">United States</option>
+        <option value="UK">United Kingdom</option>
+        <option value="IN">India</option>
+      </select>
+
+      <label>Gender</label>
+      <div>
+        <input type="radio" id="male-id" name="userGenderField" value="male">
+        <label for="male-id" style="display: inline;">Male</label>
+        <input type="radio" id="female-id" name="userGenderField" value="female">
+        <label for="female-id" style="display: inline;">Female</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="subscribe-id" name="userSubscribeField" checked>
+        <label for="subscribe-id" style="display: inline;">Subscribe to newsletter</label>
+      </div>
+
+      <label for="bio-id">Bio</label>
+      <textarea id="bio-id" name="userBioField" rows="4"></textarea>
+
+      <label for="avatar-id">Profile Picture</label>
+      <input type="file" id="avatar-id" name="userAvatarField" accept="image/*">
+	  
+	  <label for="date-id"></label>
+	  <input type="date" id="date-id">   <!-- Date picker with validation -->
+
+      <button type="submit">Register</button>
+      <button type="reset">Clear Form</button>
+    </form>
+  </div>
+</body>
+</html>

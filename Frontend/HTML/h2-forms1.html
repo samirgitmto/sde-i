@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Example (Angular-Ready)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; }
+    form { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+    label { display: block; margin-top: 10px; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    button { background: #007BFF; color: white; border: none; padding: 10px 15px; margin-top: 15px; }
+    input:invalid { border: 1px solid red; }
+    input:valid { border: 1px solid green; }
+  </style>
+</head>
+<body>
+  <h1>User Registration Form</h1>
+  
+  <!-- Basic Form Structure -->
+  <form id="userForm" action="/submit" method="POST">
+    
+    <!-- Text Input -->
+    <label for="username">Username*</label>
+    <input 
+      type="text" 
+      id="username" 
+      name="username" 
+      placeholder="Enter your username" 
+      required 
+      minlength="3"
+    >
+
+    <!-- Email Input (HTML5 Validation) -->
+    <label for="email">Email*</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      placeholder="user@example.com" 
+      required
+    >
+
+    <!-- Password Input -->
+    <label for="password">Password*</label>
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      required 
+      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+      title="Minimum 8 chars, at least 1 letter and 1 number"
+    >
+
+    <!-- Number Input (with min/max) -->
+    <label for="age">Age</label>
+    <input 
+      type="number" 
+      id="age" 
+      name="age" 
+      min="18" 
+      max="100"
+    >
+
+    <!-- Dropdown (Select) -->
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="">-- Select --</option>
+      <option value="US">United States</option>
+      <option value="UK">United Kingdom</option>
+      <option value="IN">India</option>
+    </select>
+
+    <!-- Radio Buttons -->
+    <label>Gender</label>
+    <div>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male" style="display: inline;">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female" style="display: inline;">Female</label>
+    </div>
+
+    <!-- Checkbox -->
+    <div>
+      <input type="checkbox" id="subscribe" name="subscribe" checked>
+      <label for="subscribe" style="display: inline;">Subscribe to newsletter</label>
+    </div>
+
+    <!-- Textarea -->
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="bio" rows="4"></textarea>
+
+    <!-- File Upload -->
+    <label for="avatar">Profile Picture</label>
+    <input type="file" id="avatar" name="avatar" accept="image/*">
+
+    <!-- Submit & Reset Buttons -->
+    <button type="submit">Register</button>
+    <button type="reset">Clear Form</button>
+  </form>
+</body>
+</html>

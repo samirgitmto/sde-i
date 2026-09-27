@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Field Example: Username</title>
+  <style>
+    body { display: flex; gap: 40px; font-family: Arial, sans-serif; }
+    .code, .output { width: 50%; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    .output { padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+    label, input { display: block; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="code">
+    <h2>HTML Code</h2>
+    <pre>
+&lt;label for="user-id"&gt;Username*&lt;/label&gt;
+&lt;input 
+  type="text" 
+  id="user-id" 
+  name="userNameField" 
+  placeholder="Enter your username" 
+  required 
+  minlength="3"
+/&gt;
+    </pre>
+  </div>
+  <div class="output">
+    <h2>Rendered Output</h2>
+    <form>
+      <label for="user-id">Username*</label>
+      <input 
+        type="text" 
+        id="user-id" 
+        name="userNameField" 
+        placeholder="Enter your username" 
+        required 
+        minlength="3"
+		title="the username must not have less than 3 chars"
+      >
+    </form>
+  </div>
+</body>
+</html>
