@@ -1,0 +1,33 @@
+# Eclipse workspace
+.metadata/
+
+# Compiled Java
+*.class
+
+# Java build artifacts
+*.jar
+*.war
+*.ear
+
+# Build directories
+target/
+build/
+out/
+bin/
+
+# PDFs / documents
+*.pdf
+
+# IDE files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
